@@ -633,6 +633,11 @@
                         <input type="text" id="Class" value="格兰芬多" onfocus="if (value != ''){value =''}" onblur="if (value ==''){value='格兰芬多'}" class="form-control"><br>
                         学号
                         <input type="text" id="Code" value="1980073100" onfocus="if (value != ''){value =''}" onblur="if (value ==''){value='1980073100'}" class="form-control"><br>
+                        性别
+                        <select class="form-control" id="Sex">
+                            <option>男</option>
+                            <option>女</option>
+                        </select><br>
                         导员
                         <input type="text" id="Tc" value="邓布利多" onfocus="if (value != ''){value =''}" onblur="if (value ==''){value='邓布利多'}" class="form-control"><br>
                         导员工号
@@ -656,18 +661,23 @@
 
         $(document).ready(function () {
             $("#btnY").click(function () {
-                alert("名字是: " + $("#Name").val() + "\n"
-                    + "班级：" + $("#Class").val() + "\n"
-                    + "学号是：" + $("#Code").val() + "\n"
-                    + "导员："+$("#Tc").val() + "\n"
-                    + "导员工号"+$("#TeC").val()
-                    );
                 var name = $("#Name").val();
                 var Class = $("#Class").val();
+                var sex = $("#Sex").val();
                 var code = $("#Code").val();
                 var Tc = $("#Tc").val();
                 var TeC = $("#TeC").val();
+
+                alert("名字是: " + name + "\n"
+                    + "班级：" + Class + "\n"
+                    + "学号是：" + code + "\n"
+                    + "性别是：" + sex + "\n"
+                    + "导员："+ Tc + "\n"
+                    + "导员工号:"+TeC
+                    );
+
                 document.getElementById("code").innerHTML = code;
+                document.getElementById("sex").innerHTML = sex;
                 document.getElementById("class").innerHTML = Class;
                 myname=document.getElementsByName("name");
                 tcname=document.getElementsByName("teacher");
@@ -723,7 +733,7 @@
                                 <div class="van-collapse-item__content">
                                     <div data-v-15b0b3c6="" data-v-2cc67dc5="" class="div-root">
                                         <div data-v-15b0b3c6="" class="van-address-item__address"> 姓名：<span name="name"></span></div>
-                                        <div data-v-15b0b3c6="" class="van-address-item__address"> 性别：男 </div>
+                                        <div data-v-15b0b3c6="" class="van-address-item__address"> 性别：<span id="sex"></span> </div>
                                         <div data-v-15b0b3c6="" class="van-address-item__address"> 学号：<span id="code"></span> </div>
                                         <div data-v-15b0b3c6="" class="van-address-item__address"> 班级：<span id="class"></span> </div>
                                         <div data-v-15b0b3c6="" class="van-address-item__address"> 辅导员姓名：<span name="teacher"></span></div>

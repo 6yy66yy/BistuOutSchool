@@ -562,13 +562,12 @@
             display: block !important;
             pointer-events: none;
         }
-        
 
-    body {
-        overflow: scroll;
-        -webkit-overflow-scrolling: touch;  
-    }
 
+        body {
+            overflow: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
     </style>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport"
@@ -628,25 +627,30 @@
                 <div class="modal-body">
                     <div class="input-group">
                         姓名
-                        <input type="text" id="Name" value="哈利波特" onfocus="if (value != ''){value =''}" onblur="if (value ==''){value='哈利波特'}" class="form-control"><br>
+                        <input type="text" id="Name" value="哈利波特" onfocus="if (value != ''){value =''}"
+                            onblur="if (value ==''){value='哈利波特'}" class="form-control"><br>
                         班级
-                        <input type="text" id="Class" value="格兰芬多" onfocus="if (value != ''){value =''}" onblur="if (value ==''){value='格兰芬多'}" class="form-control"><br>
+                        <input type="text" id="Class" value="格兰芬多" onfocus="if (value != ''){value =''}"
+                            onblur="if (value ==''){value='格兰芬多'}" class="form-control"><br>
                         学号
-                        <input type="text" id="Code" value="1980073100" onfocus="if (value != ''){value =''}" onblur="if (value ==''){value='1980073100'}" class="form-control"><br>
+                        <input type="text" id="Code" value="1980073100" onfocus="if (value != ''){value =''}"
+                            onblur="if (value ==''){value='1980073100'}" class="form-control"><br>
                         性别
                         <select class="form-control" id="Sex">
                             <option>男</option>
                             <option>女</option>
                         </select><br>
                         导员
-                        <input type="text" id="Tc" value="邓布利多" onfocus="if (value != ''){value =''}" onblur="if (value ==''){value='邓布利多'}" class="form-control"><br>
+                        <input type="text" id="Tc" value="邓布利多" onfocus="if (value != ''){value =''}"
+                            onblur="if (value ==''){value='邓布利多'}" class="form-control"><br>
                         导员工号
-                        <input type="text" id="TeC" value="1899000222" onfocus="if (value != ''){value =''}" onblur="if (value ==''){value='1899000222'}" class="form-control"><br>
+                        <input type="text" id="TeC" value="1899000222" onfocus="if (value != ''){value =''}"
+                            onblur="if (value ==''){value='1899000222'}" class="form-control"><br>
                         <p>想修改页面内容请刷新，懒得做记忆功能了，每次打开输一下信息凑会用</p>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default"  data-dismiss="modal">关闭
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
                     </button>
                     <button type="button" id="btnY" class="btn btn-primary" data-dismiss="modal">
                         确定
@@ -672,31 +676,30 @@
                     + "班级：" + Class + "\n"
                     + "学号是：" + code + "\n"
                     + "性别是：" + sex + "\n"
-                    + "导员："+ Tc + "\n"
-                    + "导员工号:"+TeC
-                    );
+                    + "导员：" + Tc + "\n"
+                    + "导员工号:" + TeC
+                );
 
                 document.getElementById("code").innerHTML = code;
                 document.getElementById("sex").innerHTML = sex;
                 document.getElementById("class").innerHTML = Class;
-                myname=document.getElementsByName("name");
-                tcname=document.getElementsByName("teacher");
-                tccode=document.getElementsByName("teachercode");
-                for(var i in myname){
+                myname = document.getElementsByName("name");
+                tcname = document.getElementsByName("teacher");
+                tccode = document.getElementsByName("teachercode");
+                for (var i in myname) {
                     var items = myname[i];
-                    items.innerHTML=name;
+                    items.innerHTML = name;
                 };
-                for(var i in tcname){
+                for (var i in tcname) {
                     var items = tcname[i];
-                    items.innerHTML=Tc;
+                    items.innerHTML = Tc;
                 };
-                for(var i in tccode){
+                for (var i in tccode) {
                     var items = tccode[i];
-                    items.innerHTML=TeC;
+                    items.innerHTML = TeC;
                 };
             });
         });
-    //选择触发事件
 
     </script>
     <div>
@@ -732,11 +735,16 @@
                             <div class="van-collapse-item__wrapper" style="">
                                 <div class="van-collapse-item__content">
                                     <div data-v-15b0b3c6="" data-v-2cc67dc5="" class="div-root">
-                                        <div data-v-15b0b3c6="" class="van-address-item__address"> 姓名：<span name="name"></span></div>
-                                        <div data-v-15b0b3c6="" class="van-address-item__address"> 性别：<span id="sex"></span> </div>
-                                        <div data-v-15b0b3c6="" class="van-address-item__address"> 学号：<span id="code"></span> </div>
-                                        <div data-v-15b0b3c6="" class="van-address-item__address"> 班级：<span id="class"></span> </div>
-                                        <div data-v-15b0b3c6="" class="van-address-item__address"> 辅导员姓名：<span name="teacher"></span></div>
+                                        <div data-v-15b0b3c6="" class="van-address-item__address"> 姓名：<span
+                                                name="name"></span></div>
+                                        <div data-v-15b0b3c6="" class="van-address-item__address"> 性别：<span
+                                                id="sex"></span> </div>
+                                        <div data-v-15b0b3c6="" class="van-address-item__address"> 学号：<span
+                                                id="code"></span> </div>
+                                        <div data-v-15b0b3c6="" class="van-address-item__address"> 班级：<span
+                                                id="class"></span> </div>
+                                        <div data-v-15b0b3c6="" class="van-address-item__address"> 辅导员姓名：<span
+                                                name="teacher"></span></div>
                                     </div>
                                 </div>
                             </div>
@@ -755,24 +763,18 @@
                                     <div data-v-f073ef82="" data-v-2cc67dc5="" class="div-root">
                                         <div data-v-f073ef82="" class="van-address-item__address">
                                             <div data-v-f073ef82="">
-                                                <script type="text/javascript">
-                                                    var date = new Date();
-                                                    document.write(" 出校开始日期：" + date.toJSON().substr(0, 10));
-                                                </script>
+                                                出校开始日期：<span name="datetag"></span>
                                             </div>
                                         </div>
                                         <div data-v-f073ef82="" class="van-address-item__address">
                                             <div data-v-f073ef82="">
-                                                <script type="text/javascript">
-                                                    var date = new Date();
-                                                    document.write(" 出校结束日期：" + date.toJSON().substr(0, 10));
-                                                </script>
+                                                出校结束日期：<span name="datetag"></span>
                                             </div>
                                         </div>
                                         <div data-v-f073ef82="" class="van-address-item__address"> 出校具体时间：9点 </div>
                                         <div data-v-f073ef82="" class="van-address-item__address">
                                             <script type="text/javascript">
-                                                var items = ['回家取衣服', '回家取东西', '外出购物', '出去玩', '东市买骏马','大战伏地魔','参加魁地奇比赛','购买魔法扫帚'];
+                                                var items = ['回家取衣服', '回家取东西', '外出购物', '出去玩', '东市买骏马', '大战伏地魔', '参加魁地奇比赛', '购买魔法扫帚'];
 
                                                 var randomItem = items[Math.floor(Math.random() * items.length)];
                                                 document.write('出校事由：' + randomItem)
@@ -847,14 +849,11 @@
                                                 <div data-v-9ca6a63e="" class="f-step-item-right"
                                                     style="color: rgb(7, 193, 96);">
                                                     <div data-v-9ca6a63e="" class="f-step-item_name">
-                                                        辅导员(四级)&nbsp;&nbsp;[<span name="teacher"></span>-<span name="teachercode"></span>]</div>
+                                                        辅导员(四级)&nbsp;&nbsp;[<span name="teacher"></span>-<span
+                                                            name="teachercode"></span>]</div>
                                                     <div data-v-9ca6a63e=""><span
                                                             data-v-9ca6a63e="">通过</span>&nbsp;&nbsp;&nbsp;<span
-                                                            data-v-9ca6a63e="">
-                                                            <script type="text/javascript">
-                                                                var date = new Date();
-                                                                document.write(date.toJSON().replace(/[T]/, ' ').substr(0, 19));
-                                                            </script>
+                                                            data-v-9ca6a63e="" name="timetag">
                                                         </span></div>
                                                     <div data-v-9ca6a63e="">
                                                         <div data-v-9ca6a63e="">
@@ -874,15 +873,11 @@
                                                 <div data-v-9ca6a63e="" class="f-step-item-right"
                                                     style="color: rgb(7, 193, 96);">
                                                     <div data-v-9ca6a63e="" class="f-step-item_name">
-                                                        学校(一级)&nbsp;&nbsp;[<span name="teacher"></span>-<span name="teachercode"></span>]</div>
+                                                        学校(一级)&nbsp;&nbsp;[<span name="teacher"></span>-<span
+                                                            name="teachercode"></span>]</div>
                                                     <div data-v-9ca6a63e=""><span
                                                             data-v-9ca6a63e="">通过</span>&nbsp;&nbsp;&nbsp;<span
-                                                            data-v-9ca6a63e="">
-                                                            <script type="text/javascript">
-                                                                var mydate = new Date()
-                                                                mydate.setSeconds(mydate.getSeconds() - Math.random() * 200);
-                                                                document.write(mydate.toJSON().replace(/[T]/, ' ').substr(0, 19));
-                                                            </script>
+                                                            data-v-9ca6a63e="" name="timetag">
                                                         </span>
                                                     </div>
                                                     <div data-v-9ca6a63e=""></div>
@@ -922,6 +917,41 @@
             </div>
         </div>
     </div>
+    <script>
+        now = new Date();
+        datetag = document.getElementsByName("datetag");
+        timetag = document.getElementsByName("timetag");
+        pass_time = now;
+        pass_time.setHours(-5 + Math.random() * 4);
+        for (var i in datetag) {
+            var items = datetag[i];
+            items.innerHTML = dateFormat("YYYY-mm-dd", now);
+        };
+        for (var i in timetag) {
+            var items = timetag[i];
+            items.innerHTML = dateFormat("YYYY-mm-dd HH:MM:SS", pass_time);
+            pass_time.setSeconds(now.getSeconds() - Math.random() * 7200);
+        };
+        function dateFormat(fmt, date) {
+            let ret;
+            const opt = {
+                "Y+": date.getFullYear().toString(),        // 年
+                "m+": (date.getMonth() + 1).toString(),     // 月
+                "d+": date.getDate().toString(),            // 日
+                "H+": date.getHours().toString(),           // 时
+                "M+": date.getMinutes().toString(),         // 分
+                "S+": date.getSeconds().toString()          // 秒
+                // 有其他格式化字符需求可以继续添加，必须转化成字符串
+            };
+            for (let k in opt) {
+                ret = new RegExp("(" + k + ")").exec(fmt);
+                if (ret) {
+                    fmt = fmt.replace(ret[1], (ret[1].length == 1) ? (opt[k]) : (opt[k].padStart(ret[1].length, "0")))
+                };
+            };
+            return fmt;//雷子_
+        }
+    </script>
     <script src="./出入校申请_files/chunk-vendors.5704c661.js.下载"></script>
     <script src="./出入校申请_files/app.93837cda.js.下载"></script>
     <script src="./出入校申请_files/app.93837cda.js.下载"></script>

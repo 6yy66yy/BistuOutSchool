@@ -922,7 +922,7 @@
         datetag = document.getElementsByName("datetag");
         timetag = document.getElementsByName("timetag");
         pass_time = now;
-        pass_time.setHours(-5 + Math.random() * 4);
+        // pass_time.setHours(-5 + Math.random() * 4);
         for (var i in datetag) {
             var items = datetag[i];
             items.innerHTML = dateFormat("YYYY-mm-dd", now);

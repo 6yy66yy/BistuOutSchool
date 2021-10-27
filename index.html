@@ -585,12 +585,14 @@
         }
     </style>
     <title>出入校申请</title>
-    <link href="./出入校申请_files/app.61c9b2ab.css" rel="preload" as="style">
-    <link href="./出入校申请_files/chunk-vendors.d9e02e1a.css" rel="preload" as="style">
-    <link href="./出入校申请_files/app.93837cda.js" rel="preload" as="script">
-    <link href="./出入校申请_files/chunk-vendors.5704c661.js" rel="preload" as="script">
-    <link href="./出入校申请_files/chunk-vendors.d9e02e1a.css" rel="stylesheet">
-    <link href="./出入校申请_files/app.61c9b2ab.css" rel="stylesheet">
+    <!-- <link href="./出入校申请_files/app.61c9b2ab.css" rel="preload" as="style"> -->
+    <!-- <link href="./出入校申请_files/chunk-vendors.d9e02e1a.css" rel="preload" as="style"> -->
+    <link href="./出入校申请_files\app.b43ce75f.css" rel="preload" as="style">
+    <link href="./出入校申请_files\app.b43ce75f.css" rel="stylesheet">
+    <link href="./出入校申请_files\chunk-vendors.e8b0dba7.css" rel="style">
+    <link href="./出入校申请_files\chunk-vendors.e8b0dba7.css" rel="stylesheet">
+    <!-- <link href="./出入校申请_files/chunk-vendors.d9e02e1a.css" rel="stylesheet"> -->
+    <!-- <link href="./出入校申请_files/app.61c9b2ab.css" rel="stylesheet"> -->
     <script charset="utf-8" src="chrome-extension://pngicgippofneelinabebobnkpmdiphn/js/btype.js"></script>
     <script type="text/javascript" charset="utf-8"
         src="chrome-extension://pngicgippofneelinabebobnkpmdiphn/js/chrome.js">
@@ -627,13 +629,13 @@
                 <div class="modal-body">
                     <div class="input-group">
                         姓名
-                        <input type="text" id="Name" value="哈利波特" onfocus="if (value != ''){value =''}"
+                        <input type="text" id="Name" value="哈利波特" onfocus="if (value != '哈利波特'){value =''}"
                             onblur="if (value ==''){value='哈利波特'}" class="form-control"><br>
                         班级
-                        <input type="text" id="Class" value="格兰芬多" onfocus="if (value != ''){value =''}"
+                        <input type="text" id="Class" value="格兰芬多" onfocus="if (value != '格兰芬多'){value =''}"
                             onblur="if (value ==''){value='格兰芬多'}" class="form-control"><br>
                         学号
-                        <input type="text" id="Code" value="1980073100" onfocus="if (value != ''){value =''}"
+                        <input type="text" id="Code" value="1980073100" onfocus="if (value != '1980073100'){value =''}"
                             onblur="if (value ==''){value='1980073100'}" class="form-control"><br>
                         性别
                         <select class="form-control" id="Sex">
@@ -641,11 +643,22 @@
                             <option>女</option>
                         </select><br>
                         导员
-                        <input type="text" id="Tc" value="邓布利多" onfocus="if (value != ''){value =''}"
+                        <input type="text" id="Tc" value="邓布利多" onfocus="if (value == '邓布利多'){value =''}"
                             onblur="if (value ==''){value='邓布利多'}" class="form-control"><br>
                         导员工号
-                        <input type="text" id="TeC" value="1899000222" onfocus="if (value != ''){value =''}"
-                            onblur="if (value ==''){value='1899000222'}" class="form-control"><br>
+                        <input type="text" id="TeC" value="2013012023" onfocus="if (value == '2013012023'){value =''}"
+                            onblur="if (value ==''){value='2013012023'}" class="form-control"><br>
+                        理由：
+                        <input type="text" id="reason" value="东市买骏马" onfocus="if (value == '东市买骏马'){value =''}"
+                            onblur="if (value ==''){value='东市买骏马'}" class="form-control"><button type="button"
+                            class="btn btn-default disabled" onclick="">没想法？开roll</button><br>
+                        <!-- <script type="text/javascript">
+                                var items = ['回家取衣服', '回家取东西', '外出购物', '出去玩', '上班', '大战伏地魔', '参加魁地奇比赛', '购买魔法扫帚'];
+
+                                var randomItem = items[Math.floor(Math.random() * items.length)];
+                                document.write('出校事由：' + randomItem)
+                            </script> -->
+
                         <p>想修改页面内容请刷新，懒得做记忆功能了，每次打开输一下信息凑会用</p>
                     </div>
                 </div>
@@ -664,6 +677,13 @@
         $('#myModal').modal();
 
         $(document).ready(function () {
+            // var name = localStorage.getItem('name');//保存数据到本地 施工中
+            // var class = localStorage.getItem('class');
+            // if(strName){
+            // $('#Name').val(name);
+            // }if(strPass){
+            // $('#pass').val(strPass);
+            // }
             $("#btnY").click(function () {
                 var name = $("#Name").val();
                 var Class = $("#Class").val();
@@ -671,18 +691,27 @@
                 var code = $("#Code").val();
                 var Tc = $("#Tc").val();
                 var TeC = $("#TeC").val();
+                var res = $("#reason").val();
 
                 alert("名字是: " + name + "\n"
                     + "班级：" + Class + "\n"
                     + "学号是：" + code + "\n"
                     + "性别是：" + sex + "\n"
                     + "导员：" + Tc + "\n"
-                    + "导员工号:" + TeC
+                    + "导员工号:" + TeC + "\n"
+                    + "原因:" + res
                 );
+                // localStorage.setItem('name',name);
+                // localStorage.setItem('class',class);
+                // localStorage.setItem('sex',sex);
+                // localStorage.setItem('code',code);
+                // localStorage.setItem('Tc',Tc);
+                // localStorage.setItem('TeC',TeC);
 
                 document.getElementById("code").innerHTML = code;
                 document.getElementById("sex").innerHTML = sex;
                 document.getElementById("class").innerHTML = Class;
+                document.getElementById("myreason").innerHTML = res;
                 myname = document.getElementsByName("name");
                 tcname = document.getElementsByName("teacher");
                 tccode = document.getElementsByName("teachercode");
@@ -761,161 +790,200 @@
                             <div class="van-collapse-item__wrapper">
                                 <div class="van-collapse-item__content">
                                     <div data-v-f073ef82="" data-v-2cc67dc5="" class="div-root">
+                                        <div data-v-f073ef82="" class="van-address-item__address" _msthash="2876965"
+                                            _msttexthash="61718215" style="text-align: left;"> 是否已接种新冠疫苗：两针 </div>
+                                        <div data-v-f073ef82="" class="van-address-item__address" _msthash="2876966"
+                                            _msttexthash="145155790" style="text-align: left;"> 申请类别：临时出入校（不出京，当天返回）
+                                        </div>
+
                                         <div data-v-f073ef82="" class="van-address-item__address">
                                             <div data-v-f073ef82="">
                                                 出校开始日期：<span name="datetag"></span>
                                             </div>
                                         </div>
-                                        <div data-v-f073ef82="" class="van-address-item__address">
-                                            <div data-v-f073ef82="">
-                                                出校结束日期：<span name="datetag"></span>
-                                            </div>
-                                        </div>
-                                        <div data-v-f073ef82="" class="van-address-item__address"> 出校具体时间：9点 </div>
-                                        <div data-v-f073ef82="" class="van-address-item__address">
-                                            <script type="text/javascript">
-                                                var items = ['回家取衣服', '回家取东西', '外出购物', '出去玩', '东市买骏马', '大战伏地魔', '参加魁地奇比赛', '购买魔法扫帚'];
+                                        <div data-v-f073ef82="" class="van-address-item__address" _msthash="2876967"
+                                            _msttexthash="36157134" style="text-align: left;"> 出校具体时间：7点 </div>
 
-                                                var randomItem = items[Math.floor(Math.random() * items.length)];
-                                                document.write('出校事由：' + randomItem)
-                                            </script>
-                                        </div>
-                                        <div data-v-f073ef82="" class="van-address-item__address"> 拟返校具体时间：19点 </div>
                                         <div data-v-f073ef82="" class="van-address-item__address">
-                                            <div data-v-f073ef82="">
-                                                <div data-v-f073ef82="">相关附件：</div>
-                                                <div data-v-f073ef82="" class="file-item">
-                                                    <div data-v-f073ef82=""><img id="image" src="" width="30%" />
-                                                        <br />
-                                                        <input id="btn" type="file" onchange="selectImage(this);" />
-                                                        <br>
-                                                        <button id="btn1" style="opacity: 0.2;"
-                                                            onclick="hide('btn');hide('btn1');">隐藏</button>
-                                                        <script>
-                                                            var image = '';
-                                                            function selectImage(file) {
-                                                                if (!file.files || !file.files[0]) {
-                                                                    return;
-                                                                }
-                                                                var reader = new FileReader();
-                                                                reader.onload = function (evt) {
-                                                                    document.getElementById('image').src = evt.target.result;
-                                                                    image = evt.target.result;
-                                                                }
-                                                                reader.readAsDataURL(file.files[0]);
-                                                                hide('btn')
-                                                                hide('btn1')
+                                            出校事由：<span id="myreason"></span>
+                                        </div>
+                                    </div>
+                                    <div data-v-f073ef82="" class="van-address-item__address">
+                                        <div data-v-f073ef82="">
+                                            出校结束日期：<span name="datetag"></span>
+                                        </div>
+                                    </div>
+                                    <div data-v-f073ef82="" class="van-address-item__address"> 拟返校具体时间：19点 </div>
+                                    <div data-v-f073ef82="" class="van-address-item__address">
+                                        <div data-v-f073ef82="">
+                                            <div data-v-f073ef82="">相关附件：</div>
+                                            <div data-v-f073ef82="" class="file-item">
+                                                <div data-v-f073ef82=""><img id="image" src="" width="30%" />
+                                                    <br />
+                                                    <input id="btn" type="file" onchange="selectImage(this);" />
+                                                    <br>
+                                                    <button id="btn1" style="opacity: 0.2;"
+                                                        onclick="hide('btn');hide('btn1');">隐藏</button>
+                                                    <script>
+                                                        var image = '';
+                                                        function selectImage(file) {
+                                                            if (!file.files || !file.files[0]) {
+                                                                return;
                                                             }
-                                                            function hide(a) { document.getElementById(a).style.display = "none"; }
-                                                        </script>
-                                                    </div>
+                                                            var reader = new FileReader();
+                                                            reader.onload = function (evt) {
+                                                                document.getElementById('image').src = evt.target.result;
+                                                                image = evt.target.result;
+                                                            }
+                                                            reader.readAsDataURL(file.files[0]);
+                                                            hide('btn')
+                                                            hide('btn1')
+                                                        }
+                                                        function hide(a) { document.getElementById(a).style.display = "none"; }
+                                                    </script>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div data-v-f073ef82="" class="van-address-item__address">
-                                            <div data-v-f073ef82="">
-                                                <div data-v-f073ef82="">相关附件：</div>
-                                            </div>
-                                        </div>
-                                        <div data-v-f073ef82="" class="van-address-item__address">
-                                            <div data-v-f073ef82="">
-                                                <div data-v-f073ef82="">相关附件：</div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-v-2cc67dc5="" class="van-collapse-item van-collapse-item--border">
-                            <div role="button" tabindex="0" aria-expanded="true"
-                                class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded">
-                                <div class="van-cell__title"><span>审核信息</span></div><i
-                                    class="van-icon van-icon-arrow van-cell__right-icon">
-                                    <!---->
-                                </i>
-                            </div>
-                            <div class="van-collapse-item__wrapper">
-                                <div class="van-collapse-item__content">
-                                    <div data-v-9ca6a63e="" data-v-2cc67dc5="" class="div-root">
-                                        <div data-v-9ca6a63e="" class="f-step">
-                                            <div data-v-9ca6a63e="" class="f-step-item">
-                                                <div data-v-9ca6a63e="" class="f-step-item-left"><i data-v-9ca6a63e=""
-                                                        class="van-icon van-icon-checked"
-                                                        style="color: rgb(28, 195, 151); font-size: 25px;">
-                                                        <!---->
-                                                    </i>
-                                                    <div data-v-9ca6a63e="" class="item-left-vertical-line"></div>
-                                                </div>
-                                                <div data-v-9ca6a63e="" class="f-step-item-right"
-                                                    style="color: rgb(7, 193, 96);">
-                                                    <div data-v-9ca6a63e="" class="f-step-item_name">
-                                                        辅导员(四级)&nbsp;&nbsp;[<span name="teacher"></span>-<span
-                                                            name="teachercode"></span>]</div>
-                                                    <div data-v-9ca6a63e=""><span
-                                                            data-v-9ca6a63e="">通过</span>&nbsp;&nbsp;&nbsp;<span
-                                                            data-v-9ca6a63e="" name="timetag">
-                                                        </span></div>
-                                                    <div data-v-9ca6a63e="">
-                                                        <div data-v-9ca6a63e="">
-                                                            <div data-v-9ca6a63e="">审核意见：注意安全，做好防疫，下次尽量提前四天申请</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div data-v-9ca6a63e="" class="f-step-item">
-                                                <div data-v-9ca6a63e="" class="f-step-item-left"><i data-v-9ca6a63e=""
-                                                        class="van-icon van-icon-checked"
-                                                        style="color: rgb(28, 195, 151); font-size: 25px;">
-                                                        <!---->
-                                                    </i>
-                                                    <div data-v-9ca6a63e="" class="item-left-vertical-line"></div>
-                                                </div>
-                                                <div data-v-9ca6a63e="" class="f-step-item-right"
-                                                    style="color: rgb(7, 193, 96);">
-                                                    <div data-v-9ca6a63e="" class="f-step-item_name">
-                                                        学校(一级)&nbsp;&nbsp;[<span name="teacher"></span>-<span
-                                                            name="teachercode"></span>]</div>
-                                                    <div data-v-9ca6a63e=""><span
-                                                            data-v-9ca6a63e="">通过</span>&nbsp;&nbsp;&nbsp;<span
-                                                            data-v-9ca6a63e="" name="timetag">
-                                                        </span>
-                                                    </div>
-                                                    <div data-v-9ca6a63e=""></div>
-                                                </div>
-                                            </div>
-                                            <div data-v-9ca6a63e="" class="f-step-item">
-                                                <div data-v-9ca6a63e="" class="f-step-item-left"><i data-v-9ca6a63e=""
-                                                        class="van-icon van-icon-checked"
-                                                        style="color: rgb(28, 195, 151); font-size: 25px;">
-                                                        <!---->
-                                                    </i>
-                                                    <!---->
-                                                </div>
-                                                <div data-v-9ca6a63e="" class="f-step-item-right"
-                                                    style="color: rgb(7, 193, 96);">
-                                                    <div data-v-9ca6a63e="" class="f-step-item_name">副书记(三级)&nbsp;&nbsp;
-                                                    </div>
-                                                    <div data-v-9ca6a63e=""><span
-                                                            data-v-9ca6a63e="">通过</span>&nbsp;&nbsp;&nbsp;<span
-                                                            data-v-9ca6a63e=""></span></div>
-                                                    <div data-v-9ca6a63e="">
-                                                        <div data-v-9ca6a63e="">
-                                                            <div data-v-9ca6a63e="">审核意见：</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    <div data-v-f073ef82="" class="van-address-item__address">
+                                        <div data-v-f073ef82="">
+                                            <div data-v-f073ef82="">相关附件：</div>
                                         </div>
+                                    </div>
+                                    <div data-v-f073ef82="" class="van-address-item__address">
+                                        <div data-v-f073ef82="">
+                                            <div data-v-f073ef82="">相关附件：</div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        离校日期：<br>
+                                        离校后住址：<br>
+                                        风险级别：<br>
+                                        出校具体时间：<br>
+                                        出校事由：<br>
+                                        预计返校日期：<br>
+                                        预计返校具体时间：<br>
+                                        相关附件：<br>
+                                        健康状况：<br>
+                                        联系方式：<br>
+                                        风险级别：<br>
+                                        去向城市：<br>
+                                        离校/离京日期：<br>
+                                        离京方式：<br>
+                                        京外地址：<br>
+                                        同行人员：<br>
+                                        车（航、班）次号：<br>
+                                        预计返京（返校）日期：<br>
+                                        离京事由：<br>
+                                        相关附件：<br>
+                                        其他附件信息：<br>
+                                        其他附件信息：<br>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div data-v-2cc67dc5="" class="van-submit-bar" style="color: rgb(153, 153, 153); font-size: 14px;">
-                        审核完成 </div>
+                    <div data-v-2cc67dc5="" class="van-collapse-item van-collapse-item--border">
+                        <div role="button" tabindex="0" aria-expanded="true"
+                            class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded">
+                            <div class="van-cell__title"><span>审核信息</span></div><i
+                                class="van-icon van-icon-arrow van-cell__right-icon">
+                                <!---->
+                            </i>
+                        </div>
+                        <div class="van-collapse-item__wrapper">
+                            <div class="van-collapse-item__content">
+                            <div data-v-a616e2ce="" data-v-2cc67dc5="" class="div-root">
+                                <div data-v-a616e2ce="" class="f-step">
+                                    <div data-v-a616e2ce="" class="f-step-item">
+                                        <div data-v-a616e2ce="" class="f-step-item-left"><i data-v-a616e2ce="" class="van-icon van-icon-checked"
+                                                style="color: rgb(28, 195, 151); font-size: 25px;">
+                                                <!---->
+                                            </i>
+                                            <div data-v-a616e2ce="" class="item-left-vertical-line"></div>
+                                        </div>
+                                        <div data-v-a616e2ce="" class="f-step-item-right">
+                                            <div data-v-a616e2ce="" class="f-step-item_name" _msthash="4498741" _msttexthash="16568409"
+                                                style="text-align: left;">辅导员(四级)</div>
+                                            <div data-v-a616e2ce="">
+                                                <div data-v-a616e2ce="" _msthash="5119049" _msttexthash="5826262" style="text-align: left;"><span
+                                                        data-v-a616e2ce="">[<span name="teacher"></span>-<span
+                                                        name="teachercode"></span>]</span>&nbsp;&nbsp;&nbsp;<span
+                                                        data-v-9ca6a63e="" name="timetag"></div>
+                                                <div data-v-a616e2ce="">
+                                                    <div data-v-a616e2ce="">
+                                                        <div data-v-a616e2ce="" style="color: rgb(7, 193, 96); text-align: left;" _msthash="6479239"
+                                                            _msttexthash="32701136"> 审批状态：通过 </div>
+                                                        <!---->
+                                                    </div>
+                                                </div>
+                                                <div data-v-a616e2ce="">
+                                                    <div data-v-a616e2ce="">
+                                                        <div data-v-a616e2ce="" _msthash="6479240" _msttexthash="98469553"
+                                                            style="text-align: left;"> 审核意见：外出注意防护，两点一线。</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-v-a616e2ce="" class="f-step-item">
+                                        <div data-v-a616e2ce="" class="f-step-item-left"><i data-v-a616e2ce="" class="van-icon van-icon-checked"
+                                                style="color: rgb(28, 195, 151); font-size: 25px;">
+                                                <!---->
+                                            </i>
+                                            <div data-v-a616e2ce="" class="item-left-vertical-line"></div>
+                                        </div>
+                                        <div data-v-a616e2ce="" class="f-step-item-right">
+                                            <div data-v-a616e2ce="" class="f-step-item_name" _msthash="4498742" _msttexthash="12144951"
+                                                style="text-align: left;">学校(一级)</div>
+                                            <div data-v-a616e2ce="">
+                                                <div data-v-a616e2ce="" _msthash="5119050" _msttexthash="13005824" style="text-align: left;"><span
+                                                        data-v-a616e2ce="">[自动审批-10001]</span>&nbsp;&nbsp;&nbsp;<span
+                                                        data-v-9ca6a63e="" name="timetag"></div>
+                                                <div data-v-a616e2ce="">
+                                                    <div data-v-a616e2ce="">
+                                                        <div data-v-a616e2ce="" style="color: rgb(7, 193, 96); text-align: left;" _msthash="6479241"
+                                                            _msttexthash="32854120"> 审核状态：通过 </div>
+                                                        <!---->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-v-a616e2ce="" class="f-step-item">
+                                        <div data-v-a616e2ce="" class="f-step-item-left"><i data-v-a616e2ce="" class="van-icon van-icon-checked"
+                                                style="color: rgb(28, 195, 151); font-size: 25px;">
+                                                <!---->
+                                            </i>
+                                            <!---->
+                                        </div>
+                                        <div data-v-a616e2ce="" class="f-step-item-right">
+                                            <div data-v-a616e2ce="" class="f-step-item_name" _msthash="4498743" _msttexthash="16118401"
+                                                style="text-align: left;">副书记(三级)</div>
+                                            <div data-v-a616e2ce="">
+                                                <div data-v-a616e2ce="" _msthash="5119051" _msttexthash="13005824" style="text-align: left;"><span
+                                                        data-v-a616e2ce="">[自动审批-10001]</span>&nbsp;&nbsp;&nbsp;<span
+                                                        data-v-9ca6a63e="" name="timetag"></div>
+                                                <div data-v-a616e2ce="">
+                                                    <div data-v-a616e2ce="">
+                                                        <div data-v-a616e2ce="" style="color: rgb(7, 193, 96); text-align: left;" _msthash="6479242"
+                                                            _msttexthash="32854120"> 审核状态：通过 </div>
+                                                        <!---->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div></div>
+                        </div>
+                    </div>
                 </div>
+                <div data-v-2cc67dc5="" class="van-submit-bar" style="color: rgb(153, 153, 153); font-size: 14px;">
+                    审核完成 </div>
             </div>
         </div>
+    </div>
     </div>
     <script>
         now = new Date();

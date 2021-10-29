@@ -568,6 +568,25 @@
             overflow: scroll;
             -webkit-overflow-scrolling: touch;
         }
+
+        .hidden_div {
+            margin: 0;
+            position: fixed;
+            overflow: auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 999;
+            outline: 0;
+            opacity: 0.5;
+            background-image: url("https://s3.bmp.ovh/imgs/2021/10/eb5833a2e42743e5.jpeg");
+            background-repeat: auto;
+            background-position: left top;
+            background-attachment: fixed;
+            background-size:contain;
+            display: none;
+        }
     </style>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport"
@@ -615,123 +634,130 @@
 //         alert("修改完成，你的名字是 "+name);
         }
     </script> -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        &times;
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">
-                        请输入姓名学号
-                    </h4>
-                </div>
-                <div class="modal-body">
-                    <div class="input-group">
-                        姓名
-                        <input type="text" id="Name" value="哈利波特" onfocus="if (value != '哈利波特'){value =''}"
-                            onblur="if (value ==''){value='哈利波特'}" class="form-control"><br>
-                        班级
-                        <input type="text" id="Class" value="格兰芬多" onfocus="if (value != '格兰芬多'){value =''}"
-                            onblur="if (value ==''){value='格兰芬多'}" class="form-control"><br>
-                        学号
-                        <input type="text" id="Code" value="1980073100" onfocus="if (value != '1980073100'){value =''}"
-                            onblur="if (value ==''){value='1980073100'}" class="form-control"><br>
-                        性别
-                        <select class="form-control" id="Sex">
-                            <option>男</option>
-                            <option>女</option>
-                        </select><br>
-                        导员
-                        <input type="text" id="Tc" value="邓布利多" onfocus="if (value == '邓布利多'){value =''}"
-                            onblur="if (value ==''){value='邓布利多'}" class="form-control"><br>
-                        导员工号
-                        <input type="text" id="TeC" value="2013012023" onfocus="if (value == '2013012023'){value =''}"
-                            onblur="if (value ==''){value='2013012023'}" class="form-control"><br>
-                        理由：
-                        <input type="text" id="reason" value="东市买骏马" onfocus="if (value == '东市买骏马'){value =''}"
-                            onblur="if (value ==''){value='东市买骏马'}" class="form-control"><button type="button"
-                            class="btn btn-default disabled" onclick="">没想法？开roll</button><br>
-                        <!-- <script type="text/javascript">
+    
+    <div>
+        <div class="hidden_div" id="hiddenDivId"></div>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            请输入姓名学号
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group" >
+                            姓名
+                            <input disabled="disabled" type="text" id="Name" value="哈利波特" onfocus="if (value != '哈利波特'){value =''}"
+                                onblur="if (value ==''){value='哈利波特'}" class="form-control"><br>
+                            班级
+                            <input disabled="disabled" type="text" id="Class" value="格兰芬多" onfocus="if (value != '格兰芬多'){value =''}"
+                                onblur="if (value ==''){value='格兰芬多'}" class="form-control"><br>
+                            学号
+                            <input disabled="disabled" type="text" id="Code" value="1980073100"
+                                onfocus="if (value != '1980073100'){value =''}"
+                                onblur="if (value ==''){value='1980073100'}" class="form-control"><br>
+                            性别
+                            <select class="form-control" id="Sex">
+                                <option>男</option>
+                                <option>女</option>
+                            </select><br>
+                            导员
+                            <input type="text" id="Tc" value="邓布利多" onfocus="if (value == '邓布利多'){value =''}"
+                                onblur="if (value ==''){value='邓布利多'}" class="form-control"><br>
+                            导员工号
+                            <input type="text" id="TeC" value="2013012023"
+                                onfocus="if (value == '2013012023'){value =''}"
+                                onblur="if (value ==''){value='2013012023'}" class="form-control"><br>
+                            理由：
+                            <input disabled="disabled" type="text" id="reason" value="大战伏地魔" onfocus="if (value == '大战伏地魔'){value =''}"
+                                onblur="if (value ==''){value='大战伏地魔'}" class="form-control"><button type="button"
+                                class="btn btn-default disabled" onclick="">没想法？开roll</button><br>
+                            <!-- <script type="text/javascript">
                                 var items = ['回家取衣服', '回家取东西', '外出购物', '出去玩', '上班', '大战伏地魔', '参加魁地奇比赛', '购买魔法扫帚'];
 
                                 var randomItem = items[Math.floor(Math.random() * items.length)];
                                 document.write('出校事由：' + randomItem)
                             </script> -->
 
-                        <p>想修改页面内容请刷新，懒得做记忆功能了，每次打开输一下信息凑会用</p>
+                            <s>想修改页面内容请刷新，懒得做记忆功能了，每次打开输一下信息凑会用</s>
+                            <p>由于疫情再次加重，还是每日申请，等疫情再度缓和后应该会继续帮助大家</p>
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                    </button>
-                    <button type="button" id="btnY" class="btn btn-primary" data-dismiss="modal">
-                        确定
-                    </button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal -->
-    </div>
-    <script>
-        //加载模态框
-        $('#myModal').modal();
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                        </button>
+                        <button type="button" id="btnY" class="btn btn-primary" data-dismiss="modal">
+                            确定
+                        </button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+        <script>
+            //加载模态框
+            $('#myModal').modal();
 
-        $(document).ready(function () {
-            // var name = localStorage.getItem('name');//保存数据到本地 施工中
-            // var class = localStorage.getItem('class');
-            // if(strName){
-            // $('#Name').val(name);
-            // }if(strPass){
-            // $('#pass').val(strPass);
-            // }
-            $("#btnY").click(function () {
-                var name = $("#Name").val();
-                var Class = $("#Class").val();
-                var sex = $("#Sex").val();
-                var code = $("#Code").val();
-                var Tc = $("#Tc").val();
-                var TeC = $("#TeC").val();
-                var res = $("#reason").val();
+            $(document).ready(function () {
+                // var name = localStorage.getItem('name');//保存数据到本地 施工中
+                // var class = localStorage.getItem('class');
+                // if(strName){
+                // $('#Name').val(name);
+                // }if(strPass){
+                // $('#pass').val(strPass);
+                // }
+                $("#btnY").click(function () {
+                    var name = $("#Name").val();
+                    var Class = $("#Class").val();
+                    var sex = $("#Sex").val();
+                    var code = $("#Code").val();
+                    var Tc = $("#Tc").val();
+                    var TeC = $("#TeC").val();
+                    var res = $("#reason").val();
 
-                alert("名字是: " + name + "\n"
-                    + "班级：" + Class + "\n"
-                    + "学号是：" + code + "\n"
-                    + "性别是：" + sex + "\n"
-                    + "导员：" + Tc + "\n"
-                    + "导员工号:" + TeC + "\n"
-                    + "原因:" + res
-                );
-                // localStorage.setItem('name',name);
-                // localStorage.setItem('class',class);
-                // localStorage.setItem('sex',sex);
-                // localStorage.setItem('code',code);
-                // localStorage.setItem('Tc',Tc);
-                // localStorage.setItem('TeC',TeC);
+                    alert("名字是: " + name + "\n"
+                        + "班级：" + Class + "\n"
+                        + "学号是：" + code + "\n"
+                        + "性别是：" + sex + "\n"
+                        + "导员：" + Tc + "\n"
+                        + "导员工号:" + TeC + "\n"
+                        + "原因:" + res
+                    );
+                    // localStorage.setItem('name',name);
+                    // localStorage.setItem('class',class);
+                    // localStorage.setItem('sex',sex);
+                    // localStorage.setItem('code',code);
+                    // localStorage.setItem('Tc',Tc);
+                    // localStorage.setItem('TeC',TeC);
 
-                document.getElementById("code").innerHTML = code;
-                document.getElementById("sex").innerHTML = sex;
-                document.getElementById("class").innerHTML = Class;
-                document.getElementById("myreason").innerHTML = res;
-                myname = document.getElementsByName("name");
-                tcname = document.getElementsByName("teacher");
-                tccode = document.getElementsByName("teachercode");
-                for (var i in myname) {
-                    var items = myname[i];
-                    items.innerHTML = name;
-                };
-                for (var i in tcname) {
-                    var items = tcname[i];
-                    items.innerHTML = Tc;
-                };
-                for (var i in tccode) {
-                    var items = tccode[i];
-                    items.innerHTML = TeC;
-                };
+                    document.getElementById("code").innerHTML = code;
+                    document.getElementById("sex").innerHTML = sex;
+                    document.getElementById("class").innerHTML = Class;
+                    document.getElementById("myreason").innerHTML = res;
+                    myname = document.getElementsByName("name");
+                    tcname = document.getElementsByName("teacher");
+                    tccode = document.getElementsByName("teachercode");
+                    for (var i in myname) {
+                        var items = myname[i];
+                        items.innerHTML = name;
+                    };
+                    for (var i in tcname) {
+                        var items = tcname[i];
+                        items.innerHTML = Tc;
+                    };
+                    for (var i in tccode) {
+                        var items = tccode[i];
+                        items.innerHTML = TeC;
+                    };
+                });
             });
-        });
 
-    </script>
-    <div>
+        </script>
+
         <!---->
         <div>
             <div data-v-8e00b034="" class="loading" style="display: none;"><img data-v-8e00b034=""
@@ -893,89 +919,103 @@
                         </div>
                         <div class="van-collapse-item__wrapper">
                             <div class="van-collapse-item__content">
-                            <div data-v-a616e2ce="" data-v-2cc67dc5="" class="div-root">
-                                <div data-v-a616e2ce="" class="f-step">
-                                    <div data-v-a616e2ce="" class="f-step-item">
-                                        <div data-v-a616e2ce="" class="f-step-item-left"><i data-v-a616e2ce="" class="van-icon van-icon-checked"
-                                                style="color: rgb(28, 195, 151); font-size: 25px;">
-                                                <!---->
-                                            </i>
-                                            <div data-v-a616e2ce="" class="item-left-vertical-line"></div>
-                                        </div>
-                                        <div data-v-a616e2ce="" class="f-step-item-right">
-                                            <div data-v-a616e2ce="" class="f-step-item_name" _msthash="4498741" _msttexthash="16568409"
-                                                style="text-align: left;">辅导员(四级)</div>
-                                            <div data-v-a616e2ce="">
-                                                <div data-v-a616e2ce="" _msthash="5119049" _msttexthash="5826262" style="text-align: left;"><span
-                                                        data-v-a616e2ce="">[<span name="teacher"></span>-<span
-                                                        name="teachercode"></span>]</span>&nbsp;&nbsp;&nbsp;<span
-                                                        data-v-9ca6a63e="" name="timetag"></div>
+                                <div data-v-a616e2ce="" data-v-2cc67dc5="" class="div-root">
+                                    <div data-v-a616e2ce="" class="f-step">
+                                        <div data-v-a616e2ce="" class="f-step-item">
+                                            <div data-v-a616e2ce="" class="f-step-item-left"><i data-v-a616e2ce=""
+                                                    class="van-icon van-icon-checked"
+                                                    style="color: rgb(28, 195, 151); font-size: 25px;">
+                                                    <!---->
+                                                </i>
+                                                <div data-v-a616e2ce="" class="item-left-vertical-line"></div>
+                                            </div>
+                                            <div data-v-a616e2ce="" class="f-step-item-right">
+                                                <div data-v-a616e2ce="" class="f-step-item_name" _msthash="4498741"
+                                                    _msttexthash="16568409" style="text-align: left;">辅导员(四级)</div>
                                                 <div data-v-a616e2ce="">
+                                                    <div data-v-a616e2ce="" _msthash="5119049" _msttexthash="5826262"
+                                                        style="text-align: left;"><span data-v-a616e2ce="">[<span
+                                                                name="teacher"></span>-<span
+                                                                name="teachercode"></span>]</span>&nbsp;&nbsp;&nbsp;<span
+                                                            data-v-9ca6a63e="" name="timetag"></div>
                                                     <div data-v-a616e2ce="">
-                                                        <div data-v-a616e2ce="" style="color: rgb(7, 193, 96); text-align: left;" _msthash="6479239"
-                                                            _msttexthash="32701136"> 审批状态：通过 </div>
-                                                        <!---->
+                                                        <div data-v-a616e2ce="">
+                                                            <div data-v-a616e2ce=""
+                                                                style="color: rgb(7, 193, 96); text-align: left;"
+                                                                _msthash="6479239" _msttexthash="32701136"> 审批状态：通过
+                                                            </div>
+                                                            <!---->
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div data-v-a616e2ce="">
                                                     <div data-v-a616e2ce="">
-                                                        <div data-v-a616e2ce="" _msthash="6479240" _msttexthash="98469553"
-                                                            style="text-align: left;"> 审核意见：外出注意防护，两点一线。</div>
+                                                        <div data-v-a616e2ce="">
+                                                            <div data-v-a616e2ce="" _msthash="6479240"
+                                                                _msttexthash="98469553" style="text-align: left;">
+                                                                审核意见：外出注意防护，两点一线。</div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div data-v-a616e2ce="" class="f-step-item">
-                                        <div data-v-a616e2ce="" class="f-step-item-left"><i data-v-a616e2ce="" class="van-icon van-icon-checked"
-                                                style="color: rgb(28, 195, 151); font-size: 25px;">
-                                                <!---->
-                                            </i>
-                                            <div data-v-a616e2ce="" class="item-left-vertical-line"></div>
-                                        </div>
-                                        <div data-v-a616e2ce="" class="f-step-item-right">
-                                            <div data-v-a616e2ce="" class="f-step-item_name" _msthash="4498742" _msttexthash="12144951"
-                                                style="text-align: left;">学校(一级)</div>
-                                            <div data-v-a616e2ce="">
-                                                <div data-v-a616e2ce="" _msthash="5119050" _msttexthash="13005824" style="text-align: left;"><span
-                                                        data-v-a616e2ce="">[自动审批-10001]</span>&nbsp;&nbsp;&nbsp;<span
-                                                        data-v-9ca6a63e="" name="timetag"></div>
+                                        <div data-v-a616e2ce="" class="f-step-item">
+                                            <div data-v-a616e2ce="" class="f-step-item-left"><i data-v-a616e2ce=""
+                                                    class="van-icon van-icon-checked"
+                                                    style="color: rgb(28, 195, 151); font-size: 25px;">
+                                                    <!---->
+                                                </i>
+                                                <div data-v-a616e2ce="" class="item-left-vertical-line"></div>
+                                            </div>
+                                            <div data-v-a616e2ce="" class="f-step-item-right">
+                                                <div data-v-a616e2ce="" class="f-step-item_name" _msthash="4498742"
+                                                    _msttexthash="12144951" style="text-align: left;">学校(一级)</div>
                                                 <div data-v-a616e2ce="">
+                                                    <div data-v-a616e2ce="" _msthash="5119050" _msttexthash="13005824"
+                                                        style="text-align: left;"><span
+                                                            data-v-a616e2ce="">[自动审批-10001]</span>&nbsp;&nbsp;&nbsp;<span
+                                                            data-v-9ca6a63e="" name="timetag"></div>
                                                     <div data-v-a616e2ce="">
-                                                        <div data-v-a616e2ce="" style="color: rgb(7, 193, 96); text-align: left;" _msthash="6479241"
-                                                            _msttexthash="32854120"> 审核状态：通过 </div>
-                                                        <!---->
+                                                        <div data-v-a616e2ce="">
+                                                            <div data-v-a616e2ce=""
+                                                                style="color: rgb(7, 193, 96); text-align: left;"
+                                                                _msthash="6479241" _msttexthash="32854120"> 审核状态：通过
+                                                            </div>
+                                                            <!---->
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div data-v-a616e2ce="" class="f-step-item">
-                                        <div data-v-a616e2ce="" class="f-step-item-left"><i data-v-a616e2ce="" class="van-icon van-icon-checked"
-                                                style="color: rgb(28, 195, 151); font-size: 25px;">
+                                        <div data-v-a616e2ce="" class="f-step-item">
+                                            <div data-v-a616e2ce="" class="f-step-item-left"><i data-v-a616e2ce=""
+                                                    class="van-icon van-icon-checked"
+                                                    style="color: rgb(28, 195, 151); font-size: 25px;">
+                                                    <!---->
+                                                </i>
                                                 <!---->
-                                            </i>
-                                            <!---->
-                                        </div>
-                                        <div data-v-a616e2ce="" class="f-step-item-right">
-                                            <div data-v-a616e2ce="" class="f-step-item_name" _msthash="4498743" _msttexthash="16118401"
-                                                style="text-align: left;">副书记(三级)</div>
-                                            <div data-v-a616e2ce="">
-                                                <div data-v-a616e2ce="" _msthash="5119051" _msttexthash="13005824" style="text-align: left;"><span
-                                                        data-v-a616e2ce="">[自动审批-10001]</span>&nbsp;&nbsp;&nbsp;<span
-                                                        data-v-9ca6a63e="" name="timetag"></div>
+                                            </div>
+                                            <div data-v-a616e2ce="" class="f-step-item-right">
+                                                <div data-v-a616e2ce="" class="f-step-item_name" _msthash="4498743"
+                                                    _msttexthash="16118401" style="text-align: left;">副书记(三级)</div>
                                                 <div data-v-a616e2ce="">
+                                                    <div data-v-a616e2ce="" _msthash="5119051" _msttexthash="13005824"
+                                                        style="text-align: left;"><span
+                                                            data-v-a616e2ce="">[自动审批-10001]</span>&nbsp;&nbsp;&nbsp;<span
+                                                            data-v-9ca6a63e="" name="timetag"></div>
                                                     <div data-v-a616e2ce="">
-                                                        <div data-v-a616e2ce="" style="color: rgb(7, 193, 96); text-align: left;" _msthash="6479242"
-                                                            _msttexthash="32854120"> 审核状态：通过 </div>
-                                                        <!---->
+                                                        <div data-v-a616e2ce="">
+                                                            <div data-v-a616e2ce=""
+                                                                style="color: rgb(7, 193, 96); text-align: left;"
+                                                                _msthash="6479242" _msttexthash="32854120"> 审核状态：通过
+                                                            </div>
+                                                            <!---->
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -986,6 +1026,8 @@
     </div>
     </div>
     <script>
+        var s = document.getElementById("hiddenDivId");
+        s.style.display = "block";
         now = new Date();
         datetag = document.getElementsByName("datetag");
         timetag = document.getElementsByName("timetag");
